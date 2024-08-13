@@ -1,4 +1,4 @@
-export const defaultGraph = {
+{
   "last_node_id": 51,
   "last_link_id": 89,
   "nodes": [
