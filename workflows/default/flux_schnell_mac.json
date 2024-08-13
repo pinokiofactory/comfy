@@ -203,7 +203,7 @@
       },
       "widgets_values": [
         "flux1-schnell.sft",
-        "t5xxl_fp16"
+        "fp8_e4m3fn"
       ]
     },
     {
