@@ -39,7 +39,8 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         // torch nightly
-        "message": "pip install --pre torch==2.3.1 torchvision torchaudio==2.3.1 --extra-index-url https://download.pytorch.org/whl/nightly/cpu"
+        //"message": "pip install --pre torch==2.3.1 torchvision torchaudio==2.3.1 --extra-index-url https://download.pytorch.org/whl/nightly/cpu"
+        "message": "pip install --pre torch==2.3.1 torchvision torchaudio==2.3.1"
       }
     },
     // intel mac
