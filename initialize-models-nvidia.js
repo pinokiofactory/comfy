@@ -64,5 +64,5 @@ module.exports = {
         "dest": "app/web/scripts/defaultGraph.js"
       }
     }
-  }]
+  ]
 }
