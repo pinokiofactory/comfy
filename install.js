@@ -17,12 +17,6 @@ module.exports = async (kernel, info) => {
     {
       "method": "shell.run",
       "params": {
-        "message": "mkdir workflows"
-      }
-    },
-    {
-      "method": "shell.run",
-      "params": {
         "message": [
           "git clone https://github.com/comfyanonymous/ComfyUI_examples"
         ],
