@@ -13,8 +13,12 @@ module.exports = {
       reset: info.running("reset.js")
     }
     let downloading = [
-      "download-flux1-schnell-nf4.json",
-      "download-flux1-dev-fp8.json",
+      "download-flux-schnell.json",
+      "download-flux-dev.json",
+      "download-flux-schnell-nf4.json",
+      "download-flux-dev-nf4.json",
+      "download-flux-dev-fp8.json",
+      "download-flux-schnell-fp8.json",
       "download-sdxl.json",
       "download-turbo.json",
       "download-svd-xt-1.1.json",
