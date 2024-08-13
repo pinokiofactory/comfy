@@ -12,6 +12,27 @@ module.exports = {
       update: info.running("update.js"),
       reset: info.running("reset.js")
     }
+    let downloading = [
+      "download-flux1-schnell-nf4.json",
+      "download-flux1-dev-fp8.json",
+      "download-sdxl.json",
+      "download-turbo.json",
+      "download-svd-xt-1.1.json",
+      "download-svd-xt.json",
+      "download-svd.json",
+      "download-lcm-lora.json",
+      "download-sd15.json",
+      "download-sd21.json",
+      "download.json"
+    ]
+    let is_downloading = null
+    for(let item of downloading) {
+      let d = info.running(item)
+      if (d === true) {
+        is_downloading = item
+        break;
+      }
+    }
     if (running.install) {
       return [{
         default: true,
@@ -41,6 +62,13 @@ module.exports = {
             href: "start.js",
           }]
         }
+      } else if (is_downloading) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-terminal',
+          text: "Downloading",
+          href: is_downloading,
+        }]
       } else if (running.update) {
         return [{
           default: true,
