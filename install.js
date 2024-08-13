@@ -68,7 +68,14 @@ module.exports = async (kernel, info) => {
           "embeddings": "app/models/embeddings",
           "loras": "app/models/loras",
           "upscale_models": "app/models/upscale_models",
-          "vae": "app/models/vae"
+          "vae": "app/models/vae",
+          "vae_approx": "app/models/VAE-approx",
+          "diffusers": "app/models/diffusers",
+          "unet": "app/models/unet",
+          "hypernetworks": "app/models/hypernetworks",
+          "gligen": "app/models/gligen",
+          "style_models": "app/models/style_models",
+          "photomaker": "app/models/photomaker"
         },
         "peers": [
           "https://github.com/cocktailpeanutlabs/automatic1111.git",
