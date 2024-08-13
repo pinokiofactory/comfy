@@ -87,9 +87,9 @@ module.exports = async (kernel, info) => {
     },
   ]
   if (kernel.platform === 'darwin' && kernel.arch === "arm64") {
-    run = run.concat(amd64.run)
+    run = run.concat(arm64.run)
   } else if (kernel.platform === 'darwin' && kernel.arch === "x64") {
-    run = run.concat(amd64.run)
+    run = run.concat(arm64.run)
     //run = run.concat(d.run)
   } else if (kernel.gpu === 'nvidia') {
     run = run.concat(nvidia.run)
