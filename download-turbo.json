@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "stabilityai/sdxl-turbo",
+        "files": "sd_xl_turbo_1.0_fp16.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}

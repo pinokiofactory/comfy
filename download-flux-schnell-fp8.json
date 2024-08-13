@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "Comfy-Org/flux1-schnell",
+        "files": "flux1-schnell-fp8.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}

@@ -6,7 +6,27 @@ module.exports = {
       params: {
         message: [
           "git clone https://github.com/comfyanonymous/ComfyUI app",
+          "conda install -y conda-forge::huggingface_hub",
         ]
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "git clone https://github.com/ltdrdata/ComfyUI-Manager",
+        ],
+        "path": "app/custom_nodes"
+      }
+    },
+    {
+      "when": "{{gpu === 'nvidia'}}",
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "git clone https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4.git"
+        ],
+        "path": "app/custom_nodes"
       }
     },
     // Delete this step if your project does not use torch
@@ -28,16 +48,80 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "pip install gradio devicetorch",
-          "pip install -r requirements.txt"
+          "pip install -r requirements.txt",
+          "pip install -U bitsandbytes"
         ]
       }
     },
     {
-      method: "fs.link",
-      params: {
-        venv: "app/env"
+      "method": "fs.link",
+      "params": {
+        "drive": {
+          "checkpoints": "app/models/checkpoints",
+          "clip": "app/models/clip",
+          "clip_vision": "app/models/clip_vision",
+          "configs": "app/models/configs",
+          "controlnet": "app/models/controlnet",
+          "embeddings": "app/models/embeddings",
+          "loras": "app/models/loras",
+          "upscale_models": "app/models/upscale_models",
+          "vae": "app/models/vae"
+        },
+        "peers": [
+          "https://github.com/cocktailpeanutlabs/automatic1111.git",
+          "https://github.com/cocktailpeanutlabs/fooocus.git",
+          "https://github.com/pinokiofactory/stable-diffusion-webui-forge.git"
+        ]
       }
-    }
+    },
+    {
+      "method": "fs.link",
+      "params": {
+        "drive": {
+          "output": "app/output"
+        }
+      }
+    },
+    {
+      when: "{{platform === 'darwin' && arch === 'arm64'}}",
+      method: "script.start",
+      params: {
+        uri: "initialize-models-mac-arm64.js"
+      }
+    },
+    {
+      when: "{{platform === 'darwin' && arch !== 'arm64'}}",
+      method: "script.start",
+      params: {
+        //uri: "initialize-models-default.js"
+        uri: "initialize-models-mac-arm64.js"
+      }
+    },
+    {
+      when: "{{platform !== 'darwin' && gpu === 'nvidia'}}",
+      method: "script.start",
+      params: {
+        uri: "hf.json",
+        params: {
+          uri: "initialize-models-nvidia.js"
+        }
+      }
+    },
+    {
+      when: "{{platform !== 'darwin' && gpu !== 'nvidia'}}",
+      method: "script.start",
+      params: {
+        uri: "hf.json",
+        params: {
+          uri: "initialize-models-default.js"
+        }
+      }
+    },
+//    {
+//      method: "fs.link",
+//      params: {
+//        venv: "app/env"
+//      }
+//    }
   ]
 }

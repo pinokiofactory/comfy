@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "runwayml/stable-diffusion-v1-5",
+        "files": "v1-5-pruned.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}

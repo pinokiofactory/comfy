@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "cocktailpeanut/sv",
+        "files": "svd_xt_1_1.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}

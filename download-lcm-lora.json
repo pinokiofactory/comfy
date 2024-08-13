@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "latent-consistency/lcm-lora-sdxl",
+        "files": "pytorch_lora_weights.safetensors",
+        "path": "app/models/loras"
+      }
+    }
+  }]
+}

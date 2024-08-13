@@ -1,0 +1,10 @@
+{
+  "run": [{
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "huggingface-cli download {{args.repo}} {{args.files}} --local-dir {{args.path}}"
+      ]
+    }
+  }]
+}

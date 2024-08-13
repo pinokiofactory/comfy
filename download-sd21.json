@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "stabilityai/stable-diffusion-2-1",
+        "files": "v2-1_768-ema-pruned.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}
