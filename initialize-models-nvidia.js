@@ -61,7 +61,8 @@ module.exports = {
       "method": "fs.copy",
       "params": {
         "src": "default-graph",
-        "dest": "app/web/scripts/defaultGraph.js"
+        //"dest": "app/web/scripts/defaultGraph.js"
+        "dest": "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/defaultGraph.js"
       }
     }
   ]
