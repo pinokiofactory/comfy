@@ -1,30 +1,30 @@
 module.exports = {
   daemon: true,
   run: [
+    {
+      when: "{{platform === 'darwin' && arch === 'arm64'}}",
+      method: "fs.copy",
+      params: {
+        src: "default-graph-mac",
+        dest: "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
+        //"dest": "app/web/scripts/defaultGraph.js"
+      }
+    },
 //    {
-//      when: "{{platform === 'darwin' && arch === 'arm64'}}",
-//      method: "fs.copy",
-//      params: {
-//        src: "default-graph-mac",
-//        dest: "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
-//        //"dest": "app/web/scripts/defaultGraph.js"
-//      }
+//      when: "{{platform === 'darwin' && arch === 'x64'}}",
 //    },
-////    {
-////      when: "{{platform === 'darwin' && arch === 'x64'}}",
-////    },
+    {
+      when: "{{gpu === 'nvidia'}}",
+      method: "fs.copy",
+      params: {
+        src: "default-graph",
+        //"dest": "app/web/scripts/defaultGraph.js"
+        dest: "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
+      }
+    },
 //    {
-//      when: "{{gpu === 'nvidia'}}",
-//      method: "fs.copy",
-//      params: {
-//        src: "default-graph",
-//        //"dest": "app/web/scripts/defaultGraph.js"
-//        dest: "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
-//      }
+//      when: "{{platform !== 'darwin' && gpu !== 'nvidia'}}",
 //    },
-////    {
-////      when: "{{platform !== 'darwin' && gpu !== 'nvidia'}}",
-////    },
     {
       method: "shell.run",
       params: {
@@ -32,7 +32,7 @@ module.exports = {
         env: { },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@latest' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@latest'}}"
+          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20'}}"
         ],
         on: [{
           // The regular expression pattern to monitor.
