@@ -31,7 +31,7 @@ module.exports = {
         "message": "pip install torch torchvision torchaudio"
       }
     },
-    // mac
+    // arm64 mac
     {
       "when": "{{platform === 'darwin' && arch === 'arm64'}}",
       "method": "shell.run",
@@ -42,13 +42,14 @@ module.exports = {
         "message": "pip install --pre torch==2.3.1 torchvision torchaudio==2.3.1 --extra-index-url https://download.pytorch.org/whl/nightly/cpu"
       }
     },
+    // intel mac
     {
       "when": "{{platform === 'darwin' && arch === 'x64'}}",
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "pip install torch torchvision torchaudio"
+        "message": "pip install torch torchvision torchaudio numpy<2"
       }
     },
     // linux rocm (amd)
