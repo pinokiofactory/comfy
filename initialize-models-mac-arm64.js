@@ -49,7 +49,7 @@ module.exports = {
     {
       "method": "fs.copy",
       "params": {
-        "src": "default-graph-mac.js",
+        "src": "default-graph-mac",
         "dest": "app/web/scripts/defaultGraph.js"
       }
     }

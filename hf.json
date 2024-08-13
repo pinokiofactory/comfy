@@ -3,7 +3,7 @@
     "method": "shell.run",
     "params": {
       "message": [
-        "huggingface-cli download {{args.repo}} {{args.files}} --local-dir {{args.path}}"
+        "huggingface-cli download {{input.repo}} {{input.files}} --local-dir {{input.path}}"
       ]
     }
   }]

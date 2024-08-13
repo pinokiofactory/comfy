@@ -60,7 +60,7 @@ module.exports = {
     {
       "method": "fs.copy",
       "params": {
-        "src": "default-graph.js",
+        "src": "default-graph",
         "dest": "app/web/scripts/defaultGraph.js"
       }
     }
