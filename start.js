@@ -2,6 +2,30 @@ module.exports = {
   daemon: true,
   run: [
     {
+      when: "{{platform === 'darwin' && arch === 'arm64'}}",
+      method: "fs.copy",
+      params: {
+        src: "default-graph-mac",
+        dest: "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
+        //"dest": "app/web/scripts/defaultGraph.js"
+      }
+    },
+//    {
+//      when: "{{platform === 'darwin' && arch === 'x64'}}",
+//    },
+    {
+      when: "{{gpu === 'nvidia'}}",
+      method: "fs.copy",
+      params: {
+        src: "default-graph",
+        //"dest": "app/web/scripts/defaultGraph.js"
+        dest: "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
+      }
+    },
+//    {
+//      when: "{{platform !== 'darwin' && gpu !== 'nvidia'}}",
+//    },
+    {
       method: "shell.run",
       params: {
         venv: "env",                // Edit this to customize the venv folder path

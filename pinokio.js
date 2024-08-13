@@ -62,6 +62,20 @@ module.exports = {
           text: "Start",
           href: "start.js",
         }, {
+          icon: "fa-solid fa-download",
+          text: "Download Models",
+          menu: [
+            { text: "Download by URL", icon: "fa-solid fa-download", href: "download.html?raw=true" },
+            { text: "Flux 1 Dev", icon: "fa-solid fa-download", href: "download-flux-dev.json", mode: "refresh" },
+            { text: "Flux 1 Schnell", icon: "fa-solid fa-download", href: "download-flux-schnell.json", mode: "refresh" },
+            { text: "SDXL", icon: "fa-solid fa-download", href: "download-sdxl.json", mode: "refresh" },
+            { text: "SDXL Turbo", icon: "fa-solid fa-download", href: "download-turbo.json", mode: "refresh" },
+            { text: "Stable Video XT 1.1", icon: "fa-solid fa-download", href: "download-svd-xt-1.1.json", mode: "refresh" },
+            { text: "LCM LoRA", icon: "fa-solid fa-download", href: "download-lcm-lora.json", mode: "refresh" },
+            { text: "SD 1.5", icon: "fa-solid fa-download", href: "download-sd15.json", mode: "refresh" },
+            { text: "SD 2.1", icon: "fa-solid fa-download", href: "download-sd21.json", mode: "refresh" },
+          ]
+        }, {
           icon: "fa-solid fa-plug",
           text: "Update",
           href: "update.js",

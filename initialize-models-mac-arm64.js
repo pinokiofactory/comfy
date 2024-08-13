@@ -45,14 +45,5 @@ module.exports = {
         }
       }
     },
-    // 2. Update Default Graph
-    {
-      "method": "fs.copy",
-      "params": {
-        "src": "default-graph-mac",
-        "dest": "app/web_custom_versions/Comfy-Org_ComfyUI_frontend/1.2.20/scripts/defaultGraph.js"
-        //"dest": "app/web/scripts/defaultGraph.js"
-      }
-    }
   ]
 }
