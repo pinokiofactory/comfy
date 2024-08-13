@@ -16,6 +16,21 @@ module.exports = async (kernel, info) => {
     {
       "method": "shell.run",
       "params": {
+        "message": "mkdir workflows"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "git clone https://github.com/comfyanonymous/ComfyUI_examples"
+        ],
+        "path": "workflows"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
         "message": [
           "git clone https://github.com/ltdrdata/ComfyUI-Manager",
         ],
@@ -93,39 +108,39 @@ module.exports = async (kernel, info) => {
       }
     },
   ]
-  if (kernel.platform === 'darwin' && kernel.arch === "arm64") {
-    run = run.concat(arm64.run)
-  } else if (kernel.platform === 'darwin' && kernel.arch === "x64") {
-    run = run.concat(arm64.run)
-    //run = run.concat(d.run)
-  } else if (kernel.gpu === 'nvidia') {
-    run = run.concat(nvidia.run)
-  } else {
-    run = run.concat(d.run)
-  }
+//  if (kernel.platform === 'darwin' && kernel.arch === "arm64") {
+//    run = run.concat(arm64.run)
+//  } else if (kernel.platform === 'darwin' && kernel.arch === "x64") {
+//    run = run.concat(arm64.run)
+//    //run = run.concat(d.run)
+//  } else if (kernel.gpu === 'nvidia') {
+//    run = run.concat(nvidia.run)
+//  } else {
+//    run = run.concat(d.run)
+//  }
 
-  run = run.concat([
-    {
-      method: "shell.run",
-      params: {
-        venv: "env",                // Edit this to customize the venv folder path
-        env: { },                   // Edit this to customize environment variables (see documentation)
-        path: "app",                // Edit this to customize the path to start the shell from
-        message: [
-          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20'}}"
-        ],
-        on: [{
-          // The regular expression pattern to monitor.
-          // When this pattern occurs in the shell terminal, the shell will return,
-          // and the script will go onto the next step.
-          "event": "/http:\/\/\\S+/",   
-
-          // "done": true will move to the next step while keeping the shell alive.
-          // "kill": true will move to the next step after killing the shell.
-          "done": true
-        }]
-      }
-    },
-  ])
+//  run = run.concat([
+//    {
+//      method: "shell.run",
+//      params: {
+//        venv: "env",                // Edit this to customize the venv folder path
+//        env: { },                   // Edit this to customize environment variables (see documentation)
+//        path: "app",                // Edit this to customize the path to start the shell from
+//        message: [
+//          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20'}}"
+//        ],
+//        on: [{
+//          // The regular expression pattern to monitor.
+//          // When this pattern occurs in the shell terminal, the shell will return,
+//          // and the script will go onto the next step.
+//          "event": "/http:\/\/\\S+/",   
+//
+//          // "done": true will move to the next step while keeping the shell alive.
+//          // "kill": true will move to the next step after killing the shell.
+//          "done": true
+//        }]
+//      }
+//    },
+//  ])
   return { run }
 }

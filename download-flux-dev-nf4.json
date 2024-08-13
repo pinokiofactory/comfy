@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "lllyasviel/flux1-dev-bnb-nf4",
+        "files": "flux1-dev-bnb-nf4.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}

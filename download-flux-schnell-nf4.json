@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "silveroxides/flux1-nf4-weights",
+        "files": "flux1-schnell-bnb-nf4.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}
