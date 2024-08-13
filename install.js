@@ -1,5 +1,8 @@
-module.exports = {
-  run: [
+const arm64 = require('./initialize-models-mac-arm64')
+const nvidia = require('./initialize-models-nvidia')
+const default = require('./initialize-models-default')
+module.exports = async (kernel, info) => {
+  let run = [
     // Edit this step to customize the git repository to use
     {
       method: "shell.run",
@@ -82,46 +85,16 @@ module.exports = {
         }
       }
     },
-    {
-      when: "{{platform === 'darwin' && arch === 'arm64'}}",
-      method: "script.start",
-      params: {
-        uri: "initialize-models-mac-arm64.js"
-      }
-    },
-    {
-      when: "{{platform === 'darwin' && arch !== 'arm64'}}",
-      method: "script.start",
-      params: {
-        //uri: "initialize-models-default.js"
-        uri: "initialize-models-mac-arm64.js"
-      }
-    },
-    {
-      when: "{{platform !== 'darwin' && gpu === 'nvidia'}}",
-      method: "script.start",
-      params: {
-        uri: "hf.json",
-        params: {
-          uri: "initialize-models-nvidia.js"
-        }
-      }
-    },
-    {
-      when: "{{platform !== 'darwin' && gpu !== 'nvidia'}}",
-      method: "script.start",
-      params: {
-        uri: "hf.json",
-        params: {
-          uri: "initialize-models-default.js"
-        }
-      }
-    },
-//    {
-//      method: "fs.link",
-//      params: {
-//        venv: "app/env"
-//      }
-//    }
   ]
+  if (kernel.platform === 'darwin' && kernel.arch === "arm64") {
+    run = run.concat(amd64.run)
+  } else if (kernel.platform === 'darwin' && kernel.arch === "x64") {
+    run = run.concat(amd64.run)
+    //run = run.concat(default.run)
+  } else if (kernel.gpu === 'nvidia') {
+    run = run.concat(nvidia.run)
+  } else {
+    run = run.concat(default.run)
+  }
+  return { run }
 }
