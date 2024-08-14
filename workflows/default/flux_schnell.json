@@ -167,7 +167,6 @@
         "Node name for S&R": "DualCLIPLoader"
       },
       "widgets_values": [
-        "t5xxl_fp16.safetensors",
         "t5xxl_fp8_e4m3fn.safetensors",
         "clip_l.safetensors",
         "flux"
@@ -204,7 +203,6 @@
       },
       "widgets_values": [
         "flux1-schnell.sft",
-        "fp8_e5m2",
         "fp8_e4m3fn"
       ]
     },

@@ -15,6 +15,8 @@ module.exports = async (kernel, info) => {
       }
     },
     {
+      // not working on macs so need to rever back to the version where it worked
+      when: "{{platform === 'darwin'}}",
       method: "shell.run",
       params: {
         path: "app",
