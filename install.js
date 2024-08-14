@@ -15,6 +15,15 @@ module.exports = async (kernel, info) => {
       }
     },
     {
+      method: "shell.run",
+      params: {
+        path: "app",
+        message: [
+          "git checkout 1c08bf35b49879115dedd8ec6bc92d9e8d8fd871"
+        ]
+      }
+    },
+    {
       "method": "shell.run",
       "params": {
         "message": [
