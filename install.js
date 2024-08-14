@@ -1,8 +1,8 @@
 const arm64 = require('./initialize-models-mac-arm64')
 const nvidia = require('./initialize-models-nvidia')
 const d = require('./initialize-models-default')
-//const flux = require('./download-flux-schnell.json')
-const flux = require('./download-flux-schnell-fp8.json')
+const flux_full = require('./download-flux-schnell.json')
+const flux_fp8 = require('./download-flux-schnell-fp8.json')
 module.exports = async (kernel, info) => {
   let run = [
     // Edit this step to customize the git repository to use
@@ -115,7 +115,11 @@ module.exports = async (kernel, info) => {
       }
     },
   ]
-  run = run.concat(flux.run)
+  if (kernel.platform === "darwin") {
+    run = run.concat(flux_fp8.run)
+  } else {
+    run = run.concat(flux_full.run)
+  }
 //  if (kernel.platform === 'darwin' && kernel.arch === "arm64") {
 //    run = run.concat(arm64.run)
 //  } else if (kernel.platform === 'darwin' && kernel.arch === "x64") {
