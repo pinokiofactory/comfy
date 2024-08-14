@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "drbaph/FLUX.1-schnell-dev-merged-fp8-4step",
+        "files": "FLUX.1-schnell-dev-merged-fp8-4step.safetensors",
+        "path": "app/models/checkpoints"
+      }
+    }
+  }]
+}
