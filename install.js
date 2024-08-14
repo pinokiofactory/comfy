@@ -1,7 +1,8 @@
 const arm64 = require('./initialize-models-mac-arm64')
 const nvidia = require('./initialize-models-nvidia')
 const d = require('./initialize-models-default')
-const flux = require('./download-flux-schnell.json')
+//const flux = require('./download-flux-schnell.json')
+const flux = require('./download-flux-schnell-fp8.json')
 module.exports = async (kernel, info) => {
   let run = [
     // Edit this step to customize the git repository to use
@@ -126,28 +127,28 @@ module.exports = async (kernel, info) => {
 //    run = run.concat(d.run)
 //  }
 
-  run = run.concat([
-    {
-      method: "shell.run",
-      params: {
-        venv: "env",                // Edit this to customize the venv folder path
-        env: { },                   // Edit this to customize environment variables (see documentation)
-        path: "app",                // Edit this to customize the path to start the shell from
-        message: [
-          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20'}}"
-        ],
-        on: [{
-          // The regular expression pattern to monitor.
-          // When this pattern occurs in the shell terminal, the shell will return,
-          // and the script will go onto the next step.
-          "event": "/http:\/\/\\S+/",   
-
-          // "done": true will move to the next step while keeping the shell alive.
-          // "kill": true will move to the next step after killing the shell.
-          "done": true
-        }]
-      }
-    },
-  ])
+//  run = run.concat([
+//    {
+//      method: "shell.run",
+//      params: {
+//        venv: "env",                // Edit this to customize the venv folder path
+//        env: { },                   // Edit this to customize environment variables (see documentation)
+//        path: "app",                // Edit this to customize the path to start the shell from
+//        message: [
+//          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20'}}"
+//        ],
+//        on: [{
+//          // The regular expression pattern to monitor.
+//          // When this pattern occurs in the shell terminal, the shell will return,
+//          // and the script will go onto the next step.
+//          "event": "/http:\/\/\\S+/",   
+//
+//          // "done": true will move to the next step while keeping the shell alive.
+//          // "kill": true will move to the next step after killing the shell.
+//          "done": true
+//        }]
+//      }
+//    },
+//  ])
   return { run }
 }
