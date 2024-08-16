@@ -46,6 +46,25 @@ module.exports = async (kernel, info) => {
       }
     },
     {
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "git clone https://github.com/city96/ComfyUI-GGUF"
+        ],
+        "path": "app/custom_nodes"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "../../env",
+        "path": "app/custom_nodes/ComfyUI-GGUF",
+        "message": [
+          "pip install -r requirements.txt"
+        ],
+      }
+    },
+    {
       "when": "{{gpu === 'nvidia'}}",
       "method": "shell.run",
       "params": {
