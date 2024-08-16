@@ -1,0 +1,13 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "hf.json",
+      "params": {
+        "repo": "city96/FLUX.1-schnell-gguf",
+        "files": "flux1-schnell-Q4_0.gguf",
+        "path": "app/models/unet"
+      }
+    }
+  }]
+}
