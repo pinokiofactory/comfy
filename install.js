@@ -33,6 +33,15 @@ module.exports = async (kernel, info) => {
         "message": [
           "git clone https://github.com/comfyanonymous/ComfyUI_examples"
         ],
+        "path": "app/custom_nodes"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "git clone https://github.com/comfyanonymous/ComfyUI_examples"
+        ],
         "path": "workflows"
       }
     },
