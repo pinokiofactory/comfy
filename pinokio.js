@@ -99,8 +99,8 @@ module.exports = {
           text: "Download Models",
           menu: [
             { text: "Download by URL", icon: "fa-solid fa-download", href: "download.html?raw=true" },
-            { text: "Flux1 Dev gguf q4_0", icon: "fa-solid fa-download", href: "download-flux-dev-q4-0.json", mode: "refresh" },
-            { text: "Flux1 Schnell gguf q4_0", icon: "fa-solid fa-download", href: "download-flux-schnell-q4-0.json", mode: "refresh" },
+            { text: "Flux1 Dev gguf q4_0", icon: "fa-solid fa-download", href: "download-flux-dev-gguf-q4-0.json", mode: "refresh" },
+            { text: "Flux1 Schnell gguf q4_0", icon: "fa-solid fa-download", href: "download-flux-schnell-gguf-q4-0.json", mode: "refresh" },
             { text: "Flux 1 Dev nf4", icon: "fa-solid fa-download", href: "download-flux-dev-nf4.json", mode: "refresh" },
             { text: "Flux 1 Schnell nf4", icon: "fa-solid fa-download", href: "download-flux-schnell-nf4.json", mode: "refresh" },
             { text: "Flux 1 Dev fp8", icon: "fa-solid fa-download", href: "download-flux-dev-fp8.json", mode: "refresh" },
