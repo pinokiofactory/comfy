@@ -96,13 +96,25 @@ module.exports = async (kernel, info) => {
         }
       }
     },
+    {
+      "when": "{{['true', '1'].includes(String(env.FLUX_AUTODOWNLOAD).toLowerCase())}}",      
+      "method": "script.start",
+      "params": {
+        "uri": "hf.json",
+        "params": {
+          "repo": "Comfy-Org/flux1-schnell",
+          "files": "flux1-schnell-fp8.safetensors",
+          "path": "app/models/checkpoints"
+        }
+      }
+    }
   ]
   //if (kernel.platform === "darwin") {
   //  run = run.concat(flux.run)
   //} else {
   //  run = run.concat(flux_merged.run)
   //}
-  run = run.concat(flux.run)
+//  run = run.concat(flux.run)
 //  if (kernel.platform === 'darwin' && kernel.arch === "arm64") {
 //    run = run.concat(arm64.run)
 //  } else if (kernel.platform === 'darwin' && kernel.arch === "x64") {
