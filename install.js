@@ -16,26 +16,6 @@ module.exports = async (kernel, info) => {
         ]
       }
     },
-//    {
-//      // not working on macs so need to rever back to the version where it worked
-//      when: "{{platform === 'darwin'}}",
-//      method: "shell.run",
-//      params: {
-//        path: "app",
-//        message: [
-//          "git checkout 1c08bf35b49879115dedd8ec6bc92d9e8d8fd871"
-//        ]
-//      }
-//    },
-//    {
-//      "method": "shell.run",
-//      "params": {
-//        "message": [
-//          "git clone https://github.com/comfyanonymous/ComfyUI_examples"
-//        ],
-//        "path": "app/custom_nodes"
-//      }
-//    },
     {
       "method": "shell.run",
       "params": {
@@ -54,35 +34,6 @@ module.exports = async (kernel, info) => {
         "path": "app/custom_nodes"
       }
     },
-//    {
-//      "method": "shell.run",
-//      "params": {
-//        "message": [
-//          "git clone https://github.com/city96/ComfyUI-GGUF"
-//        ],
-//        "path": "app/custom_nodes"
-//      }
-//    },
-//    {
-//      "method": "shell.run",
-//      "params": {
-//        "venv": "../../env",
-//        "path": "app/custom_nodes/ComfyUI-GGUF",
-//        "message": [
-//          "pip install -r requirements.txt"
-//        ],
-//      }
-//    },
-//    {
-//      "when": "{{gpu === 'nvidia'}}",
-//      "method": "shell.run",
-//      "params": {
-//        "message": [
-//          "git clone https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4.git"
-//        ],
-//        "path": "app/custom_nodes"
-//      }
-//    },
     // Delete this step if your project does not use torch
     {
       method: "script.start",
