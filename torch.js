@@ -18,7 +18,7 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         // torch-directml
-        "message": "pip install torch-directml"
+        "message": "pip install torch-directml torchaudio torchvision numpy==1.26.4"
       }
     },
     // windows cpu
