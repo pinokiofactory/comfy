@@ -32,7 +32,7 @@ module.exports = {
       "download-sd21.json",
       "mochi-lite.json",
       "mochi-high.json",
-      "mochi-mac.json",
+//      "mochi-mac.json",
       "download.json"
     ]
     let is_downloading = null
@@ -103,14 +103,11 @@ module.exports = {
           icon: "fa-solid fa-bolt",
           text: "Quick Installers",
           menu: [{
-            text: "mochi low VRAM",
+            text: "mochi",
             href: "mochi-lite.json"
           }, {
-            text: "mochi high VRAM",
+            text: "mochi high VRAM (~22G)",
             href: "mochi-high.json"
-          }, {
-            text: "mochi mac",
-            href: "mochi-mac.json"
           }]
         }, {
           icon: "fa-solid fa-download",
