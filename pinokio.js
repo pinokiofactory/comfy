@@ -97,6 +97,19 @@ module.exports = {
           text: "Start",
           href: "start.js",
         }, {
+          icon: "fa-solid fa-bolt",
+          text: "Quick Installers",
+          menu: [{
+            text: "mochi",
+            href: "mochi.js"
+          }, {
+            text: "mochi low VRAM",
+            href: "mochi-lite.js"
+          }, {
+            text: "mochi high VRAM",
+            href: "mochi-high.js"
+          }]
+        }, {
           icon: "fa-solid fa-download",
           text: "Download Models",
           menu: [
