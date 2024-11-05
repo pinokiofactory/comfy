@@ -1,0 +1,9 @@
+{
+  "run": [{
+    "method": "fs.download",
+    "params": {
+      "uri": "https://huggingface.co/Comfy-Org/mochi_preview_repackaged/resolve/main/all_in_one/mochi_preview_fp8_scaled.safetensors?download=true",
+      "dir": "app/models/checkpoints"
+    }
+  }]
+}
