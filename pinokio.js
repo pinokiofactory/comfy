@@ -30,6 +30,9 @@ module.exports = {
       "download-lcm-lora.json",
       "download-sd15.json",
       "download-sd21.json",
+      "mochi.json",
+      "mochi-lite.json",
+      "mochi-high.json",
       "download.json"
     ]
     let is_downloading = null
@@ -101,13 +104,13 @@ module.exports = {
           text: "Quick Installers",
           menu: [{
             text: "mochi",
-            href: "mochi.js"
+            href: "mochi.json"
           }, {
             text: "mochi low VRAM",
-            href: "mochi-lite.js"
+            href: "mochi-lite.json"
           }, {
             text: "mochi high VRAM",
-            href: "mochi-high.js"
+            href: "mochi-high.json"
           }]
         }, {
           icon: "fa-solid fa-download",
