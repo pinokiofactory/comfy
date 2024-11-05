@@ -103,10 +103,10 @@ module.exports = {
           icon: "fa-solid fa-bolt",
           text: "Quick Installers",
           menu: [{
-            text: "mochi",
+            text: "mochi (VRAM ~17G)",
             href: "mochi-lite.json"
           }, {
-            text: "mochi high VRAM (~22G)",
+            text: "mochi (VRAM ~22G)",
             href: "mochi-high.json"
           }]
         }, {
