@@ -80,6 +80,7 @@ module.exports = async (kernel, info) => {
           "photomaker": "app/models/photomaker"
         },
         "peers": [
+          "https://github.com/cocktailpeanut/fluxgym.git",
           "https://github.com/cocktailpeanutlabs/automatic1111.git",
           "https://github.com/cocktailpeanutlabs/fooocus.git",
           "https://github.com/cocktailpeanutlabs/comfyui.git",
