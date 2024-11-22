@@ -1,10 +1,9 @@
 {
   "run": [{
-    "method": "shell.run",
+    "method": "fs.download",
     "params": {
-      "message": [
-        "huggingface-cli download {{input.repo}} {{input.files}} --local-dir {{input.path}}"
-      ]
+      "uri": "{{'https://huggingface.co/' + input.repo + '/resolve/main/' + input.files + '?download=true'}}",
+      "dir": "{{input.path}}"
     }
   }]
 }

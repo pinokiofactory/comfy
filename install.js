@@ -106,6 +106,49 @@ module.exports = async (kernel, info) => {
           "path": "app/models/checkpoints"
         }
       }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",                // Edit this to customize the venv folder path
+        env: {
+          PYTORCH_ENABLE_MPS_FALLBACK: "1",
+          TOKENIZERS_PARALLELISM: "false"
+        },                   // Edit this to customize environment variables (see documentation)
+        path: "app",                // Edit this to customize the path to start the shell from
+        message: [
+          //"{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20' : 'python main.py --front-end-version Comfy-Org/ComfyUI_frontend@1.2.20'}}"
+          "{{platform === 'win32' && gpu === 'amd' ? 'python main.py --directml' : 'python main.py'}}"
+        ],
+        on: [{
+          // The regular expression pattern to monitor.
+          // When this pattern occurs in the shell terminal, the shell will return,
+          // and the script will go onto the next step.
+          "event": "/http:\/\/[a-zA-Z0-9.]+:[0-9]+/",   
+
+          // "done": true will move to the next step while keeping the shell alive.
+          // "kill": true will move to the next step after killing the shell.
+          "kill": true
+        }]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        message: [
+          "git clone https://github.com/comfyanonymous/ComfyUI_examples"
+        ],
+        path: "app/user/default/workflows"
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        message: [
+          "git clone https://github.com/cocktailpeanut/comfy_json_workflow"
+        ],
+        path: "app/user/default/workflows"
+      }
     }
   ]
   //if (kernel.platform === "darwin") {

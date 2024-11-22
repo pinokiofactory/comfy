@@ -32,6 +32,12 @@ module.exports = {
       "download-sd21.json",
       "mochi-lite.json",
       "mochi-high.json",
+      "ltx.json",
+      "fluxtools/fill.json",
+      "fluxtools/redux_schnell.json",
+      "fluxtools/redux_dev.json",
+      "fluxtools/depth.json",
+      "fluxtools/canny.json",
 //      "mochi-mac.json",
       "download.json"
     ]
@@ -100,14 +106,38 @@ module.exports = {
           text: "Start",
           href: "start.js",
         }, {
-          icon: "fa-solid fa-bolt",
-          text: "Quick Installers",
+          icon: "fa-solid fa-compact-disc",
+          text: "Download Mix",
           menu: [{
-            text: "mochi (VRAM ~17G)",
-            href: "mochi-lite.json"
+            text: "LTX Video Gen",
+            href: "ltx.json"
           }, {
-            text: "mochi (VRAM ~22G)",
-            href: "mochi-high.json"
+            text: "Flux Tools",
+            menu: [{
+              text: "Flux Fill [dev]",
+              href: "fluxtools/fill.json"
+            }, {
+              text: "Flux Redux Schnell",
+              href: "fluxtools/redux_schnell.json"
+            }, {
+              text: "Flux Redux Dev",
+              href: "fluxtools/redux_dev.json"
+            }, {
+              text: "Flux Depth",
+              href: "fluxtools/depth.json"
+            }, {
+              text: "Flux Canny",
+              href: "fluxtools/canny.json"
+            }]
+          }, {
+            text: "Mochi Video Gen",
+            menu: [{
+              text: "Low VRAM (~17G)",
+              href: "mochi-lite.json"
+            }, {
+              text: "High VRAM (~22G)",
+              href: "mochi-high.json"
+            }]
           }]
         }, {
           icon: "fa-solid fa-download",

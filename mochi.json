@@ -5,5 +5,21 @@
       "uri": "https://huggingface.co/Comfy-Org/mochi_preview_repackaged/resolve/main/all_in_one/mochi_preview_fp8_scaled.safetensors?download=true",
       "dir": "app/models/checkpoints"
     }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "git clone https://github.com/cocktailpeanut/comfy_json_workflow"
+      ],
+      "path": "app/user/default/workflows"
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "git pull"
+      ],
+      "path": "app/user/default/workflows/comfy_json_workflow"
+    }
   }]
 }
