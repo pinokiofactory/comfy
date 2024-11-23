@@ -35,7 +35,7 @@
       "uri": "hf.json",
       "params": {
         "repo": "cocktailpeanut/xulf-schnell",
-        "files": "ae.sft",
+        "files": "ae.safetensors",
         "path": "app/models/vae"
       }
     }
@@ -45,7 +45,7 @@
       "uri": "hf.json",
       "params": {
         "repo": "cocktailpeanut/xulf-schnell",
-        "files": "flux1-schnell.sft",
+        "files": "flux1-schnell.safetensors",
         "path": "app/models/unet"
       }
     }

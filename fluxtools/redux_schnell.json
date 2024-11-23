@@ -1,0 +1,79 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "Comfy-Org/sigclip_vision_384",
+        "files": "sigclip_vision_patch14_384.safetensors",
+        "path": "app/models/clip_vision"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "cocktailpeanut/redux",
+        "files": "flux1-redux-dev.safetensors",
+        "path": "app/models/style_models"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "cocktailpeanut/xulf-schnell",
+        "files": "flux1-schnell.safetensors",
+        "path": "app/models/unet"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "Comfy-Org/stable-diffusion-3.5-fp8",
+        "files": "text_encoders/t5xxl_fp16.safetensors",
+        "path": "app/models/clip"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "cocktailpeanut/xulf-schnell",
+        "files": "ae.safetensors",
+        "path": "app/models/vae"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "Comfy-Org/stable-diffusion-3.5-fp8",
+        "files": "text_encoders/clip_l.safetensors",
+        "path": "app/models/clip"
+      }
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "git clone https://github.com/cocktailpeanut/comfy_json_workflow"
+      ],
+      "path": "app/user/default/workflows"
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "git pull"
+      ],
+      "path": "app/user/default/workflows/comfy_json_workflow"
+    }
+  }]
+}

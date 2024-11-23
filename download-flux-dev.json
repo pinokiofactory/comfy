@@ -35,7 +35,7 @@
       "uri": "hf.json",
       "params": {
         "repo": "cocktailpeanut/xulf-dev",
-        "files": "main/ae.sft",
+        "files": "main/ae.safetensors",
         "path": "app/models/vae"
       }
     }
@@ -45,7 +45,7 @@
       "uri": "hf.json",
       "params": {
         "repo": "cocktailpeanut/xulf-dev",
-        "files": "flux1-dev.sft",
+        "files": "flux1-dev.safetensors",
         "path": "app/models/unet"
       }
     }

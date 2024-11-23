@@ -1,0 +1,59 @@
+{
+  "run": [{
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "cocktailpeanut/fcanny",
+        "files": "flux1-canny-dev.safetensors",
+        "path": "app/models/diffusion_models"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "comfyanonymous/flux_text_encoders",
+        "files": "clip_l.safetensors",
+        "path": "app/models/clip"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "comfyanonymous/flux_text_encoders",
+        "files": "t5xxl_fp16.safetensors",
+        "path": "app/models/clip"
+      }
+    }
+  }, {
+    "method": "script.start",
+    "params": {
+      "uri": "../hf.json",
+      "params": {
+        "repo": "cocktailpeanut/xulf-dev",
+        "files": "ae.safetensors",
+        "path": "app/models/vae"
+      }
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "git clone https://github.com/cocktailpeanut/comfy_json_workflow"
+      ],
+      "path": "app/user/default/workflows"
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": [
+        "git pull"
+      ],
+      "path": "app/user/default/workflows/comfy_json_workflow"
+    }
+  }]
+}
