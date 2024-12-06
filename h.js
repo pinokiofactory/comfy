@@ -41,8 +41,15 @@ module.exports = {
     {
       method: "fs.copy",
       params: {
-        src: "https://github.com/pinokiofactory/comfy.git/app/custom_nodes/ComfyUI-HunyuanVideoWrapper/examples",
-        dest: "https://github.com/pinokiofactory/comfy.git/app/user/default/workflows/hunyuanvideo",
+        src: "https://github.com/pinokiofactory/comfy.git/app/custom_nodes/ComfyUI-HunyuanVideoWrapper/examples/hyvideo_t2v_example_01.json",
+        dest: "https://github.com/pinokiofactory/comfy.git/app/user/default/workflows/hunyuanvideo/hyvideo_t2v_example_01.json",
+      }
+    },
+    {
+      method: "fs.copy",
+      params: {
+        src: "https://github.com/pinokiofactory/comfy.git/app/custom_nodes/ComfyUI-HunyuanVideoWrapper/examples/hyvideo_v2v_example_01.json",
+        dest: "https://github.com/pinokiofactory/comfy.git/app/user/default/workflows/hunyuanvideo/hyvideo_v2v_example_01.json"
       }
     }
     //{
