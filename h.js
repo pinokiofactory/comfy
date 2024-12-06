@@ -58,7 +58,8 @@ module.exports = {
         venv: "../../env",
         path: "app/custom_nodes/ComfyUI-HunyuanVideoWrapper",
         message: [
-          "pip install -r requirements.txt"
+          "pip install -r requirements.txt",
+          "pip install sageattention
         ]
       }
     },
