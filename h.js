@@ -59,7 +59,8 @@ module.exports = {
         path: "app/custom_nodes/ComfyUI-HunyuanVideoWrapper",
         message: [
           "pip install -r requirements.txt",
-          "pip install sageattention"
+          "pip install sageattention",
+          "{{platform === 'win32' ? 'pip install https://github.com/woct0rdho/triton-windows/releases/download/v3.1.0-windows.post5/triton-3.1.0-cp310-cp310-win_amd64.whl' : 'pip install triton'}}"
         ]
       }
     },
