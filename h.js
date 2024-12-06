@@ -55,10 +55,10 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "env",
-        path: "app",
+        venv: "../../env",
+        path: "app/custom_nodes/ComfyUI-HunyuanVideoWrapper",
         message: [
-          "pip install diffusers"
+          "pip install -r requirements.txt"
         ]
       }
     },
