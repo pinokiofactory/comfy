@@ -38,6 +38,7 @@ module.exports = {
       "fluxtools/redux_dev.json",
       "fluxtools/depth.json",
       "fluxtools/canny.json",
+      "h.js",
 //      "mochi-mac.json",
       "download.json"
     ]
