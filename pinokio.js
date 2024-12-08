@@ -38,7 +38,7 @@ module.exports = {
       "fluxtools/redux_dev.json",
       "fluxtools/depth.json",
       "fluxtools/canny.json",
-      "h.js",
+      "hunyuan/install.js",
 //      "mochi-mac.json",
       "download.json"
     ]
@@ -110,6 +110,9 @@ module.exports = {
           icon: "fa-solid fa-compact-disc",
           text: "Download Mix",
           menu: [{
+            text: "Hunyuan Video",
+            href: "hunyuan/install.json"
+          }, {
             text: "LTX Video Gen",
             href: "ltx.json"
           }, {
