@@ -64,6 +64,25 @@ module.exports = {
         ]
       }
     },
+    {
+      method: "shell.run",
+      params: {
+        path: "https://github.com/pinokiofactory/comfy.git/app/custom_nodes",
+        message: [
+          "git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+        ],
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "../../env",
+        path: "app/custom_nodes/ComfyUI-VideoHelperSuite",
+        message: [
+          "pip install -r requirements.txt",
+        ]
+      }
+    },
     //{
     //  method: "fs.link",
     //  params: {
