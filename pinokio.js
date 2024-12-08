@@ -111,7 +111,7 @@ module.exports = {
           text: "Download Mix",
           menu: [{
             text: "Hunyuan Video",
-            href: "hunyuan/install.json"
+            href: "hunyuan/install.js"
           }, {
             text: "LTX Video Gen",
             href: "ltx.json"
