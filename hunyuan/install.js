@@ -18,14 +18,20 @@ module.exports = {
       method: "shell.run",
       params: {
         path: "../app/models/LLM",
-        message: "huggingface-cli download Kijai/llava-llama-3-8b-text-encoder-tokenizer --local-dir llava-llama-3-8b-text-encoder-tokenizer"
+        message: [
+          "huggingface-cli download Kijai/llava-llama-3-8b-text-encoder-tokenizer --local-dir llava-llama-3-8b-text-encoder-tokenizer",
+          "{{platform==='win32' ? 'dir' : 'ls'}}"
+        ]
       }
     },
     {
       method: "shell.run",
       params: {
         path: "../app/models/clip",
-        message: "huggingface-cli download openai/clip-vit-large-patch14 --local-dir clip-vit-large-patch14"
+        message: [
+          "huggingface-cli download openai/clip-vit-large-patch14 --local-dir clip-vit-large-patch14",
+          "{{platform==='win32' ? 'dir' : 'ls'}}"
+        ]
       }
     },
     {
