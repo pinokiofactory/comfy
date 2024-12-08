@@ -4,14 +4,14 @@ module.exports = {
       method: "fs.download",
       params: {
         uri: "https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_cfgdistill_fp8_e4m3fn.safetensors?download=true",
-        dir: "app/models/diffusion_models"
+        dir: "../app/models/diffusion_models"
       }
     },
     {
       method: "fs.download",
       params: {
         uri: "https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_vae_bf16.safetensors?download=true",
-        dir: "app/models/vae"
+        dir: "../app/models/vae"
       }
     },
     {
