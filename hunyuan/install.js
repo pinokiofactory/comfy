@@ -39,6 +39,23 @@ module.exports = {
       params: {
         path: "../app/custom_nodes",
         message: [
+          "git clone https://github.com/kijai/ComfyUI-KJNodes"
+        ],
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "../../env",
+        path: "../app/custom_nodes/ComfyUI-KJNodes",
+        message: [ "pip install -r requirements.txt", ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        path: "../app/custom_nodes",
+        message: [
           "git clone https://github.com/kijai/ComfyUI-HunyuanVideoWrapper"
         ],
       }
