@@ -17,21 +17,21 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        path: "app/models/LLM",
+        path: "../app/models/LLM",
         message: "huggingface-cli download Kijai/llava-llama-3-8b-text-encoder-tokenizer --local-dir llava-llama-3-8b-text-encoder-tokenizer"
       }
     },
     {
       method: "shell.run",
       params: {
-        path: "app/models/clip",
+        path: "../app/models/clip",
         message: "huggingface-cli download openai/clip-vit-large-patch14 --local-dir clip-vit-large-patch14"
       }
     },
     {
       method: "shell.run",
       params: {
-        path: "app/custom_nodes",
+        path: "../app/custom_nodes",
         message: [
           "git clone https://github.com/kijai/ComfyUI-HunyuanVideoWrapper"
         ],
@@ -41,14 +41,14 @@ module.exports = {
       method: "shell.run",
       params: {
         venv: "../../env",
-        path: "app/custom_nodes/ComfyUI-HunyuanVideoWrapper",
+        path: "../app/custom_nodes/ComfyUI-HunyuanVideoWrapper",
         message: [ "pip install -r requirements.txt", ]
       }
     },
     {
       method: "shell.run",
       params: {
-        path: "https://github.com/pinokiofactory/comfy.git/app/custom_nodes",
+        path: "../app/custom_nodes",
         message: [ "git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite" ],
       }
     },
@@ -56,7 +56,7 @@ module.exports = {
       method: "shell.run",
       params: {
         venv: "../../env",
-        path: "app/custom_nodes/ComfyUI-VideoHelperSuite",
+        path: "../app/custom_nodes/ComfyUI-VideoHelperSuite",
         message: [ "pip install -r requirements.txt", ]
       }
     },
@@ -66,7 +66,7 @@ module.exports = {
         "message": [
           "git clone https://github.com/cocktailpeanut/comfy_json_workflow"
         ],
-        "path": "app/user/default/workflows"
+        "path": "../app/user/default/workflows"
       }
     },
     {
@@ -75,7 +75,7 @@ module.exports = {
         "message": [
           "git pull"
         ],
-        "path": "app/user/default/workflows/comfy_json_workflow"
+        "path": "../app/user/default/workflows/comfy_json_workflow"
       }
     }
   ]

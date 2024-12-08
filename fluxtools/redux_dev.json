@@ -65,7 +65,7 @@
       "message": [
         "git clone https://github.com/cocktailpeanut/comfy_json_workflow"
       ],
-      "path": "app/user/default/workflows"
+      "path": "../app/user/default/workflows"
     }
   }, {
     "method": "shell.run",
@@ -73,7 +73,7 @@
       "message": [
         "git pull"
       ],
-      "path": "app/user/default/workflows/comfy_json_workflow"
+      "path": "../app/user/default/workflows/comfy_json_workflow"
     }
   }]
 }
