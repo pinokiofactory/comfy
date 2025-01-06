@@ -48,6 +48,9 @@ module.exports = {
           // "kill": true will move to the next step after killing the shell.
           "done": true
         }, {
+          "event": "/errno/i",
+          "break": false
+        }, {
           "event": "/error:/i",
           "break": false
         }]
