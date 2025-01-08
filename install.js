@@ -130,6 +130,12 @@ module.exports = async (kernel, info) => {
           // "done": true will move to the next step while keeping the shell alive.
           // "kill": true will move to the next step after killing the shell.
           "kill": true
+        }, {
+          "event": "/errno/i",
+          "break": false
+        }, {
+          "event": "/error:/i",
+          "break": false
         }]
       }
     },
