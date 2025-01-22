@@ -35,7 +35,7 @@
       "uri": "hf.json",
       "params": {
         "repo": "cocktailpeanut/xulf-dev",
-        "files": "main/ae.safetensors",
+        "files": "ae.safetensors",
         "path": "app/models/vae"
       }
     }
