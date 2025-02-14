@@ -175,6 +175,7 @@ module.exports = {
           icon: "fa-regular fa-circle-xmark",
           text: "Reset",
           href: "reset.js",
+          confirm: "Are you sure you want to delete the app?"
         }]
       }
     } else {
