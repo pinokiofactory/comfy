@@ -42,5 +42,14 @@ module.exports = {
       ],
       path: "app/user/default/workflows/comfy_json_workflow"
     }
+  }, {
+    method: "shell.run",
+    params: {
+      path: "app",
+      venv: "env",
+      message: [
+        "pip install -r requirements.txt"
+      ],
+    }
   }]
 }
