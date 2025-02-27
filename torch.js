@@ -1,6 +1,17 @@
 module.exports = {
   run: [
-    // windows/linux nvidia
+    // windows/linux nvidia (5090)
+    {
+      "when": "{{gpu === 'nvidia' && gpu_model && /5090/.test(gpu_model) }}",
+      "method": "shell.run",
+      "params": {
+        "venv": "{{args && args.venv ? args.venv : null}}",
+        "path": "{{args && args.path ? args.path : '.'}}",
+        "message": "pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu121"
+      },
+      "next": null
+    },
+    // windows/linux nvidia (normal)
     {
       "when": "{{gpu === 'nvidia'}}",
       "method": "shell.run",

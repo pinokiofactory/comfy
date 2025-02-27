@@ -39,6 +39,10 @@ module.exports = {
       "fluxtools/depth.json",
       "fluxtools/canny.json",
       "hunyuan/install.js",
+      "wan/text1.3b.js",
+      "wan/text14b.js",
+      "wan/image480p.js",
+      "wan/image720p.js",
 //      "mochi-mac.json",
       "download.json"
     ]
@@ -110,6 +114,25 @@ module.exports = {
           icon: "fa-solid fa-compact-disc",
           text: "Download Mix",
           menu: [{
+            text: "Wan Video",
+            menu: [{
+              icon: "fa-solid fa-compact-disc",
+              text: "text2video-1.3b",
+              href: "wan/text1.3b.js"
+            }, {
+              icon: "fa-solid fa-compact-disc",
+              text: "text2video-14b",
+              href: "wan/text14b.js"
+            }, {
+              icon: "fa-solid fa-compact-disc",
+              text: "image2video-480p",
+              href: "wan/image480p.js"
+            }, {
+              icon: "fa-solid fa-compact-disc",
+              text: "image2video-720p",
+              href: "wan/image720p.js"
+            }]
+          }, {
             text: "Hunyuan Video",
             href: "hunyuan/install.js"
           }, {
