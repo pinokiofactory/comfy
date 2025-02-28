@@ -2,12 +2,12 @@ module.exports = {
   run: [
     // windows/linux nvidia (5090)
     {
-      "when": "{{gpu === 'nvidia' && gpu_model && /5090/.test(gpu_model) }}",
+      "when": "{{gpu === 'nvidia' && gpu_model && /50[0-9]+/.test(gpu_model) }}",
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu121"
+        "message": "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128"
       },
       "next": null
     },
