@@ -2,7 +2,7 @@ module.exports = {
   run: [
     // windows/linux nvidia (5090)
     {
-      "when": "{{gpu === 'nvidia' && gpu_model && /50[0-9]+/.test(gpu_model) }}",
+      "when": "{{gpu === 'nvidia' && gpu_model && / 50[0-9]+/.test(gpu_model) }}",
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
