@@ -43,6 +43,7 @@ module.exports = {
       "wan/text14b.js",
       "wan/image480p.js",
       "wan/image720p.js",
+      "ltx/install.js",
 //      "mochi-mac.json",
       "download.json"
     ]
@@ -114,6 +115,10 @@ module.exports = {
           icon: "fa-solid fa-compact-disc",
           text: "Download Mix",
           menu: [{
+            icon: "fa-solid fa-compact-disc",
+            text: "LTX 0.9.5",
+            href: "ltx/install.js"
+          }, {
             text: "Wan Video",
             menu: [{
               icon: "fa-solid fa-compact-disc",
