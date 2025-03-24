@@ -12,7 +12,7 @@ module.exports = async (kernel, info) => {
       params: {
         message: [
           "git clone https://github.com/comfyanonymous/ComfyUI app",
-          "conda install -y conda-forge::huggingface_hub",
+          //"conda install -y conda-forge::huggingface_hub",
         ]
       }
     },
