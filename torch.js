@@ -29,7 +29,7 @@ module.exports = {
       "next": null
     },
     {
-      "when": "{{gpu === 'nvidia'}}",
+      "when": "{{gpu === 'nvidia' && platform === 'win32'}}",
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
@@ -39,7 +39,20 @@ module.exports = {
           "uv pip install https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post9/triton-3.2.0-cp310-cp310-win_amd64.whl --force-reinstall",
           "uv pip install https://github.com/deepbeepmeep/SageAttention/raw/refs/heads/main/releases/sageattention-2.1.0-cp310-cp310-win_amd64.whl --force-reinstall"
         ]
-      }
+      },
+      "next": null
+    },
+    {
+      "when": "{{gpu === 'nvidia' && platform === 'linux'}}",
+      "method": "shell.run",
+      "params": {
+        "venv": "{{args && args.venv ? args.venv : null}}",
+        "path": "{{args && args.path ? args.path : '.'}}",
+        "message": [
+          "uv pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu121 --force-reinstall",
+        ]
+      },
+      "next": null
     },
     // windows amd
     {
