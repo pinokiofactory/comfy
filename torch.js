@@ -24,6 +24,7 @@ module.exports = {
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
           "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall",
+          "uv pip install git+https://github.com/thu-ml/SageAttention.git"
         ]
       },
       "next": null
@@ -50,6 +51,7 @@ module.exports = {
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
           "uv pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu121 --force-reinstall",
+          "uv pip install git+https://github.com/thu-ml/SageAttention.git"
         ]
       },
       "next": null
