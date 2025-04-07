@@ -104,7 +104,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.0 --force-reinstall"
+        "message": "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4 --force-reinstall"
       }
     },
     // linux cpu
