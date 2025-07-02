@@ -8,7 +8,7 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
-          'uv pip install --pre "torch<2.8.0" torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall',
+          "uv pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}} --index-url https://download.pytorch.org/whl/cu128 --force-reinstall",
           "uv pip install -U --pre triton-windows",
           "uv pip install https://github.com/woct0rdho/SageAttention/releases/download/v2.1.1-windows/sageattention-2.1.1+cu128torch2.7.0-cp310-cp310-win_amd64.whl"
         ]
@@ -23,7 +23,7 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
-          "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall",
+          "uv pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}} --index-url https://download.pytorch.org/whl/cu128 --force-reinstall",
           "uv pip install git+https://github.com/thu-ml/SageAttention.git"
         ]
       },
@@ -36,8 +36,8 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
-          "uv pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu124 --force-reinstall",
-          "uv pip install -U triton-windows",
+          "uv pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 {{args && args.xformers ? 'xformers' : ''}} --index-url https://download.pytorch.org/whl/cu124 --force-reinstall",
+          "uv pip install triton-windows==3.2.0.post18",
           "uv pip install https://github.com/deepbeepmeep/SageAttention/raw/refs/heads/main/releases/sageattention-2.1.0-cp310-cp310-win_amd64.whl --force-reinstall"
         ]
       },
@@ -50,7 +50,7 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
-          "uv pip install torch torchvision torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu124 --force-reinstall",
+          "uv pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 {{args && args.xformers ? 'xformers' : ''}} --index-url https://download.pytorch.org/whl/cu124 --force-reinstall",
           "uv pip install git+https://github.com/thu-ml/SageAttention.git"
         ]
       },
@@ -106,7 +106,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4 --force-reinstall"
+        "message": "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.3 --force-reinstall"
       }
     },
     // linux cpu
