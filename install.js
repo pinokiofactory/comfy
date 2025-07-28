@@ -80,15 +80,17 @@ module.exports = async (kernel, info) => {
           "configs": "app/models/configs",
           "controlnet": "app/models/controlnet",
           "diffusers": "app/models/diffusers",
+          "diffusion_models": "app/models/diffusion_models",
           "embeddings": "app/models/embeddings",
           "gligen": "app/models/gligen",
           "hypernetworks": "app/models/hypernetworks",
           "loras": "app/models/loras",
           "photomaker": "app/models/photomaker",
           "style_models": "app/models/style_models",
+          "text_encoders": "app/models/text_encoders",
           "unet": "app/models/unet",
           "upscale_models": "app/models/upscale_models",
-          "vae_approx": "app/models/VAE-approx",
+          "vae_approx": "app/models/vae_approx",
           "vae": "app/models/vae"
         },
         "peers": [
