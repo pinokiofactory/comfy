@@ -75,21 +75,21 @@ module.exports = async (kernel, info) => {
       "params": {
         "drive": {
           "checkpoints": "app/models/checkpoints",
-          "clip": "app/models/clip",
           "clip_vision": "app/models/clip_vision",
+          "clip": "app/models/clip",
           "configs": "app/models/configs",
           "controlnet": "app/models/controlnet",
-          "embeddings": "app/models/embeddings",
-          "loras": "app/models/loras",
-          "upscale_models": "app/models/upscale_models",
-          "vae": "app/models/vae",
-          "vae_approx": "app/models/VAE-approx",
           "diffusers": "app/models/diffusers",
-          "unet": "app/models/unet",
-          "hypernetworks": "app/models/hypernetworks",
+          "embeddings": "app/models/embeddings",
           "gligen": "app/models/gligen",
+          "hypernetworks": "app/models/hypernetworks",
+          "loras": "app/models/loras",
+          "photomaker": "app/models/photomaker",
           "style_models": "app/models/style_models",
-          "photomaker": "app/models/photomaker"
+          "unet": "app/models/unet",
+          "upscale_models": "app/models/upscale_models",
+          "vae_approx": "app/models/VAE-approx",
+          "vae": "app/models/vae"
         },
         "peers": [
           "https://github.com/cocktailpeanut/fluxgym.git",
