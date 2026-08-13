@@ -9,6 +9,7 @@ module.exports = {
       "id": "start_comfyui",
       method: "shell.run",
       params: {
+        build: true,
         venv: "env",
         env: {
           PYTORCH_ENABLE_MPS_FALLBACK: "1",
